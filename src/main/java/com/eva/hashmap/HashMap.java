@@ -45,6 +45,7 @@ public class HashMap<K, V> {
         this(DEFAULT_SIZE);
     }
 
+
     public HashMap(int size) {
         this.size = size;
         this.elements = (LinkedList<Item<K, V>>[]) new LinkedList[size];
@@ -113,9 +114,9 @@ public class HashMap<K, V> {
         for (int k = 0; k < size; k++) {
             if (elements[k] != null) {
                 elementIndex = 0;
-                sb.append("[index: ").append(k).append("] -> { key: ");
+                sb.append("[index: ").append(k).append("] -> { ");
                 for (Item<K, V> i : elements[k]) {
-                    sb.append(i.getKey()).append(", value: ").append(i.getValue());
+                    sb.append("key: ").append(i.getKey()).append(" = value: ").append(i.getValue());
                     if (elementIndex < elements[k].size() - 1) {
                         sb.append(", ");
                     }
